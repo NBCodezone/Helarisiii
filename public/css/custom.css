@@ -1,0 +1,160 @@
+/* Custom styles */
+.btn-md-square {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Override Bootstrap styles */
+.dropdown-toggle::after {
+    margin-left: 0.5em;
+}
+
+/* Custom topbar styles */
+.topbar-link {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.topbar-link:hover {
+    color: var(--bs-primary);
+}
+
+/* Topbar text colors - improve visibility */
+.text-muted {
+    color: #495057 !important;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+/* Search bar customization */
+.search-form {
+    position: relative;
+}
+
+.search-form .form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+/* Harmonize padding/height of search select and button */
+.search-form .form-select {
+    padding: 0.75rem 1rem !important; /* match input py-3 */
+    min-width: 180px;
+    border-left: 1px solid #e9ecef !important;
+}
+
+.search-form .btn {
+    padding: 0.75rem 1.25rem !important;
+}
+
+.search-form .form-control {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Cart icon customization */
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Theme overrides: switch to green palette */
+:root {
+    --bs-primary: #16a34a;   /* emerald-600 */
+    --bs-primary-rgb: 22, 163, 74;
+    --bs-secondary: #065f46; /* emerald-900 */
+    --bs-secondary-rgb: 6, 95, 70;
+}
+
+/* Ensure links follow primary color rather than template’s orange */
+a { color: var(--bs-primary) !important; }
+a:hover { color: #15803d !important; }
+
+/* Utility: primary border/text helpers when inline styles used */
+.border-primary { border-color: var(--bs-primary) !important; }
+.text-primary { color: var(--bs-primary) !important; }
+.btn-primary { background-color: var(--bs-primary) !important; border-color: var(--bs-primary) !important; }
+.btn-primary:hover { background-color: #15803d !important; border-color: #15803d !important; }
+
+/* Override Bootstrap’s hard-coded bg utilities in bundled theme */
+.bg-primary { background-color: var(--bs-primary) !important; }
+.bg-secondary { background-color: var(--bs-secondary) !important; }
+.text-secondary { color: var(--bs-secondary) !important; }
+
+/* Navbar on primary background: ensure white links/icons */
+.nav-bar .navbar.bg-primary .navbar-nav .nav-link { color: #fff !important; }
+.nav-bar .navbar.bg-primary .navbar-nav .nav-link:hover,
+.nav-bar .navbar.bg-primary .navbar-nav .nav-link.active { color: #fff !important; opacity: 0.9; }
+.nav-bar .navbar.bg-primary .navbar-brand { color: #fff !important; }
+.nav-bar .navbar.bg-primary .navbar-brand .text-secondary { color: #fff !important; }
+.nav-bar .navbar .navbar-toggler { color: #fff !important; border-color: rgba(255,255,255,.35) !important; }
+.nav-bar .navbar .navbar-toggler .fa { color: #fff !important; }
+.nav-bar .navbar .navbar-toggler h4, .nav-bar .navbar .navbar-toggler h4 i { color: #fff !important; }
+
+/* Ensure dropdown menu items are readable */
+.dropdown-menu .dropdown-item {
+    color: #212529 !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(22, 163, 74, 0.1) !important;
+    color: var(--bs-primary) !important;
+}
+
+/* Category dropdown styles */
+.categories-bars .categories-bars-item a {
+    color: #212529 !important;
+}
+
+.categories-bars .categories-bars-item a:hover {
+    color: var(--bs-primary) !important;
+}
+
+.categories-bars .categories-bars-item span {
+    color: #6c757d !important;
+}
+
+/* Icon links in topbar - ensure visibility */
+.btn-md-square {
+    color: #495057 !important;
+    border-color: #dee2e6 !important;
+}
+
+.btn-md-square:hover {
+    color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-md-square i {
+    color: inherit !important;
+}
+
+/* Search button text should be white */
+.btn-primary {
+    color: #fff !important;
+}
+
+/* Phone button text should be white */
+.btn-secondary {
+    color: #fff !important;
+}
