@@ -158,3 +158,93 @@ a:hover { color: #15803d !important; }
 .btn-secondary {
     color: #fff !important;
 }
+
+/* ================================
+   Pagination Styles - Fix for Bootstrap 5
+   ================================ */
+.pagination {
+    display: flex !important;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+}
+
+.pagination .page-item {
+    margin: 0 2px;
+}
+
+.pagination .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0.5rem 0.75rem;
+    color: #212529 !important;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+.pagination .page-link:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #212529 !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d !important;
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+/* Fix pagination nav wrapper alignment */
+nav[aria-label="Pagination Navigation"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav[aria-label="Pagination Navigation"] > div {
+    width: 100%;
+}
+
+nav[aria-label="Pagination Navigation"] .d-none.flex-sm-fill {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 576px) {
+    nav[aria-label="Pagination Navigation"] .d-none.flex-sm-fill {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Hide mobile pagination on larger screens */
+nav[aria-label="Pagination Navigation"] .d-flex.d-sm-none {
+    display: none !important;
+}
+
+@media (max-width: 575.98px) {
+    nav[aria-label="Pagination Navigation"] .d-flex.d-sm-none {
+        display: flex !important;
+    }
+    nav[aria-label="Pagination Navigation"] .d-none.flex-sm-fill {
+        display: none !important;
+    }
+}

@@ -25,7 +25,7 @@
     <link href="{{ asset('Electro-Bootstrap-1.0.0/css/style.css') }}" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
-    <link href="{{ asset('css/custom.css?v=1.1') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css?v=1.2') }}" rel="stylesheet">
 </head>
 <body>
     @include('partials.topbar')
@@ -129,7 +129,7 @@
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="pagination d-flex justify-content-center">
-                            {{ $products->links() }}
+                            {{ $products->links('pagination::bootstrap-5') }}
                         </div>
                     </div>
                 </div>

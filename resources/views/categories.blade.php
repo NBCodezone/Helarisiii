@@ -26,7 +26,7 @@
     <link href="{{ asset('Electro-Bootstrap-1.0.0/css/style.css') }}" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
-    <link href="{{ asset('css/custom.css?v=1.1') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css?v=1.2') }}" rel="stylesheet">
 
     <style>
         .category-card {
@@ -176,6 +176,67 @@
             font-size: 4rem;
             color: #adb5bd;
         }
+
+        /* Fix pagination display */
+        .pagination {
+            display: flex !important;
+            flex-wrap: wrap;
+            padding-left: 0;
+            list-style: none;
+            justify-content: center;
+        }
+        .pagination .page-item {
+            margin: 0 2px;
+        }
+        .pagination .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            padding: 0.5rem 0.75rem;
+            color: #212529;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+        .pagination .page-link:hover {
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+            color: #212529;
+        }
+        .pagination .page-item.disabled .page-link {
+            color: #6c757d;
+            background-color: #fff;
+            border-color: #dee2e6;
+        }
+        /* Fix pagination nav wrapper */
+        nav[aria-label="Pagination Navigation"] {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        nav[aria-label="Pagination Navigation"] > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        @media (min-width: 640px) {
+            nav[aria-label="Pagination Navigation"] > div.hidden {
+                display: flex !important;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -236,7 +297,7 @@
                 <!-- Pagination -->
                 @if($categories->hasPages())
                     <div class="d-flex justify-content-center mt-4">
-                        {{ $categories->links() }}
+                        {{ $categories->links('pagination::bootstrap-5') }}
                     </div>
                 @endif
             @else

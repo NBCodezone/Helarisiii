@@ -96,8 +96,8 @@
                                 Net Weight (kg) <span class="text-red-500">*</span>
                             </label>
                             <div class="relative">
-                                <input type="number" id="net_weight" name="net_weight" value="{{ old('net_weight', $product->net_weight) }}" required step="0.01" min="0"
-                                    placeholder="0.00"
+                                <input type="number" id="net_weight" name="net_weight" value="{{ old('net_weight', $product->net_weight) }}" required step="0.0001" min="0"
+                                    placeholder="0.0000"
                                     class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 @error('net_weight') border-red-500 @enderror">
                                 <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                     <span class="text-gray-400 text-sm font-medium">kg</span>
